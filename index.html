@@ -3,94 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- 🔍 SEO - Lo que aparece en Google -->
+
     <title>Huijie Lin - Estudiante & Creador de Contenido</title>
-    <meta name="description" content="Hola! Soy Huijie, tengo 17 años y vivo en Barcelona. Estudiante de 2.º de Bachillerato Tecnológico, amante del anime y los videojuegos.">
+    <meta name="description" content="Hola! Soy Huijie, vivo en Barcelona y me apasiona la tecnología, el anime, los videojuegos y crear contenido.">
     <meta name="author" content="Huijie Lin">
-    
-    <!-- 🔤 SF PRO / INTER FONT (Apple-style) -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- 🎨 ICONOS (Font Awesome) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- 🎨 APPLE STYLE -->
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         :root {
             --text-primary: #1d1d1f;
-            --text-secondary: #86868b;
+            --text-secondary: #6e6e73;
             --background: #ffffff;
-            --background-secondary: #fbfbfd;
+            --background-secondary: #f5f5f7;
             --accent: #0071e3;
             --accent-hover: #0077ed;
+            --accent-soft: #e6f2ff;
+            --card-shadow: 0 16px 42px rgba(0, 0, 0, 0.08);
         }
-        
+
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
             background-color: var(--background);
             color: var(--text-primary);
-            line-height: 1.47059;
-            font-weight: 400;
-            letter-spacing: -0.022em;
+            line-height: 1.47;
+            letter-spacing: -0.015em;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
-        
-        /* 🧭 NAVBAR - Apple Style */
+
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            height: 48px;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: saturate(180%) blur(20px);
-            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            height: 50px;
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: saturate(180%) blur(16px);
             z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 max(22px, env(safe-area-inset-left));
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 0 max(20px, env(safe-area-inset-left));
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
         }
-        
+
         .navbar-logo {
             font-size: 18px;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--text-primary);
             text-decoration: none;
-            letter-spacing: -0.02em;
         }
-        
+
         .navbar-links {
             display: flex;
             list-style: none;
-            gap: 28px;
+            gap: 22px;
         }
-        
+
         .navbar-links a {
             font-size: 12px;
             color: var(--text-primary);
             text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
+            opacity: 0.78;
+            transition: opacity 0.25s ease;
         }
-        
+
         .navbar-links a:hover,
-        .navbar-links a.active {
-            opacity: 1;
-        }
-        
-        /* 🏠 HERO SECTION */
+        .navbar-links a.active { opacity: 1; }
+
         .hero {
             min-height: 100vh;
             display: flex;
@@ -98,275 +85,158 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 120px 20px 80px;
-            background: linear-gradient(180deg, var(--background) 0%, var(--background-secondary) 100%);
+            padding: 130px 20px 80px;
+            background:
+                radial-gradient(circle at 20% 20%, #eaf4ff 0%, transparent 38%),
+                radial-gradient(circle at 80% 0%, #f2edff 0%, transparent 32%),
+                linear-gradient(180deg, #ffffff 0%, #f8f9ff 100%);
         }
-        
+
         .hero-eyebrow {
-            font-size: 17px;
-            font-weight: 400;
+            font-size: 16px;
             color: var(--accent);
+            font-weight: 600;
             margin-bottom: 8px;
         }
-        
+
         .hero-title {
-            font-size: clamp(40px, 8vw, 80px);
-            font-weight: 700;
-            letter-spacing: -0.04em;
-            line-height: 1.05;
+            font-size: clamp(40px, 8vw, 82px);
+            line-height: 1.03;
+            letter-spacing: -0.045em;
             max-width: 900px;
             margin-bottom: 16px;
-            background: linear-gradient(90deg, var(--text-primary), #434343);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-weight: 800;
         }
-        
+
         .hero-subtitle {
-            font-size: clamp(19px, 3vw, 28px);
-            font-weight: 400;
+            font-size: clamp(19px, 2.8vw, 29px);
             color: var(--text-secondary);
-            max-width: 600px;
-            line-height: 1.4;
-            margin-bottom: 40px;
+            max-width: 700px;
+            margin-bottom: 36px;
         }
-        
-        .hero-cta {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
+
+        .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+
         .btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
             padding: 12px 24px;
-            font-size: 17px;
-            font-weight: 500;
-            border-radius: 980px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
-        
-        .btn-primary {
-            background: var(--accent);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: var(--accent-hover);
-            transform: scale(1.02);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--accent);
-        }
-        
-        .btn-secondary:hover {
-            text-decoration: underline;
-        }
-        
-        /* 📖 ABOUT SECTION */
-        .about {
-            padding: 100px 20px;
-            background: var(--background);
-        }
-        
-        .about-container {
-            max-width: 980px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        
-        .about-image {
-            position: relative;
-        }
-        
-        .about-image img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 24px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-        }
-        
-        .about-content h2 {
-            font-size: 48px;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            margin-bottom: 24px;
-        }
-        
-        .about-content p {
-            font-size: 19px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        
-        /* 🎯 INTERESTS SECTION */
-        .interests {
-            padding: 100px 20px;
-            background: var(--background-secondary);
-        }
-        
-        .interests-container {
-            max-width: 980px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .interests h2 {
-            font-size: 48px;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            margin-bottom: 60px;
-        }
-        
-        .interests-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 24px;
-        }
-        
-        .interest-card {
-            background: var(--background);
-            border-radius: 20px;
-            padding: 32px 24px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        
-        .interest-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-        }
-        
-        .interest-icon {
-            font-size: 40px;
-            margin-bottom: 16px;
-        }
-        
-        .interest-card h3 {
+            border-radius: 999px;
             font-size: 17px;
             font-weight: 600;
-            color: var(--text-primary);
+            text-decoration: none;
+            border: none;
+            transition: all 0.3s ease;
         }
-        
-        /* 🔗 LINKS SECTION */
-        .links {
-            padding: 100px 20px;
-            background: var(--background);
-            text-align: center;
+
+        .btn-primary { background: var(--accent); color: #fff; }
+        .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+        .btn-secondary { background: var(--accent-soft); color: var(--accent); }
+        .btn-secondary:hover { filter: brightness(0.98); }
+
+        .quick-stats {
+            margin-top: 44px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(120px, 1fr));
+            gap: 14px;
+            width: min(680px, 100%);
         }
-        
-        .links h2 {
-            font-size: 48px;
-            font-weight: 700;
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 18px;
+            padding: 16px;
+        }
+
+        .stat-card strong { display: block; font-size: 27px; font-weight: 800; }
+        .stat-card span { font-size: 14px; color: var(--text-secondary); }
+
+        .section { padding: 100px 20px; }
+        .container { max-width: 1040px; margin: 0 auto; }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 56px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: min(100%, 390px);
+            border-radius: 24px;
+            box-shadow: var(--card-shadow);
+        }
+
+        h2 {
+            font-size: clamp(32px, 5vw, 52px);
             letter-spacing: -0.03em;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
-        
+
+        .about-content p,
         .links p {
             font-size: 19px;
             color: var(--text-secondary);
-            margin-bottom: 40px;
+            margin-bottom: 14px;
         }
-        
-        .links-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
+
+        .interests { background: var(--background-secondary); }
+        .interests h2,
+        .links { text-align: center; }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
         }
-        
-        /* 📱 FOOTER */
+
+        .interest-card {
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 20px;
+            padding: 28px 20px;
+            transition: 0.25s ease;
+        }
+
+        .interest-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+        }
+
+        .interest-icon { font-size: 35px; margin-bottom: 13px; }
+
+        .links-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+
         .footer {
-            padding: 40px 20px;
-            background: var(--background-secondary);
+            padding: 36px 20px;
             text-align: center;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        .footer p {
-            font-size: 12px;
             color: var(--text-secondary);
+            font-size: 12px;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+            background: #fafafd;
         }
-        
-        /* 📱 RESPONSIVE */
-        @media (max-width: 768px) {
-            .navbar-links {
-                gap: 16px;
-            }
-            
-            .navbar-links a {
-                font-size: 11px;
-            }
-            
-            .about-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            
-            .about-image {
-                order: -1;
-            }
-            
-            .about-image img {
-                max-width: 280px;
-            }
-            
-            .about-content h2,
-            .interests h2,
-            .links h2 {
-                font-size: 32px;
-            }
-            
-            .about-content p,
-            .links p {
-                font-size: 17px;
-            }
+
+        @media (max-width: 800px) {
+            .navbar-links { gap: 12px; }
+            .navbar-links a { font-size: 11px; }
+            .about-container { grid-template-columns: 1fr; text-align: center; }
+            .about-image { order: -1; }
+            .quick-stats { grid-template-columns: 1fr; max-width: 320px; }
         }
-        
-        @media (max-width: 500px) {
-            .navbar {
-                padding: 0 16px;
-            }
-            
-            .navbar-links {
-                gap: 12px;
-            }
-            
-            .navbar-links a {
-                font-size: 10px;
-            }
-            
-            .hero {
-                padding: 100px 16px 60px;
-            }
-            
-            .hero-cta {
-                flex-direction: column;
-                width: 100%;
-                padding: 0 20px;
-            }
-            
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
+
+        @media (max-width: 560px) {
+            .navbar { padding: 0 12px; }
+            .navbar-links { display: none; }
+            .hero { padding: 108px 16px 70px; }
+            .hero-cta { flex-direction: column; width: 100%; padding: 0 14px; }
+            .btn { width: 100%; }
         }
     </style>
 </head>
 <body>
-    <!-- 🧭 NAVBAR -->
     <nav class="navbar">
         <a href="index.html" class="navbar-logo">Huijie Lin</a>
         <ul class="navbar-links">
@@ -375,96 +245,75 @@
             <li><a href="animes.html">Animes</a></li>
             <li><a href="huijiegpt.html">HuijieGPT</a></li>
             <li><a href="lasayye.html">La Sayye</a></li>
-            <li><a href="https://huijielin.notion.site/calendar-huijie" target="_blank">Calendario</a></li>
+            <li><a href="https://huijielin.notion.site/calendar-huijie" target="_blank" rel="noopener noreferrer">Calendario</a></li>
         </ul>
     </nav>
 
-    <!-- 🏠 HERO SECTION -->
     <section class="hero">
         <p class="hero-eyebrow">Estudiante de Bachillerato Tecnológico</p>
         <h1 class="hero-title">Hola, soy Huijie Lin</h1>
-        <p class="hero-subtitle">
-            Tengo 17 años y vivo en Barcelona. Me encanta explorar el mundo de la tecnología, 
-            los videojuegos y el anime.
-        </p>
+        <p class="hero-subtitle">Vivo en Barcelona y me apasiona la tecnología, los videojuegos, el anime y crear proyectos en internet.</p>
         <div class="hero-cta">
-            <a href="redes-sociales.html" class="btn btn-primary">
-                Mis Redes Sociales <i class="fas fa-arrow-right"></i>
-            </a>
-            <a href="#about" class="btn btn-secondary">
-                Conoce más <i class="fas fa-chevron-down"></i>
-            </a>
+            <a href="redes-sociales.html" class="btn btn-primary">Mis Redes Sociales <i class="fas fa-arrow-right"></i></a>
+            <a href="#about" class="btn btn-secondary">Conoce más <i class="fas fa-chevron-down"></i></a>
+        </div>
+
+        <div class="quick-stats">
+            <article class="stat-card">
+                <strong>2º</strong>
+                <span>Bachillerato Tecnológico</span>
+            </article>
+            <article class="stat-card">
+                <strong>4+</strong>
+                <span>Áreas que me motivan</span>
+            </article>
+            <article class="stat-card">
+                <strong>100%</strong>
+                <span>Ganas de aprender</span>
+            </article>
         </div>
     </section>
 
-    <!-- 📖 ABOUT SECTION -->
-    <section class="about" id="about">
-        <div class="about-container">
+    <section class="section" id="about">
+        <div class="container about-container">
             <div class="about-image">
-                <img src="images/huijie-lin.jpeg" alt="Huijie Lin">
+                <img src="images/huijie-lin.jpeg" alt="Huijie Lin en un retrato personal">
             </div>
             <div class="about-content">
                 <h2>Sobre mí</h2>
-                <p>
-                    Soy Huijie, tengo 17 años y actualmente estoy cursando 2.º de Bachillerato Tecnológico, 
-                    explorando el fascinante mundo de la tecnología y aprendiendo cada día algo nuevo.
-                </p>
-                <p>
-                    Mis pasiones son los videojuegos, el anime y hacer cosas creativas. 
-                    Cuando no estoy estudiando, probablemente esté jugando, viendo anime o 
-                    creando contenido para mis redes sociales.
-                </p>
+                <p>Soy Huijie y actualmente curso 2.º de Bachillerato Tecnológico. Me encanta aprender cosas nuevas y entender cómo funciona el mundo digital.</p>
+                <p>Fuera del estudio, disfruto del anime, los videojuegos y la creación de contenido. Este sitio es mi espacio para compartir lo que me gusta y en lo que estoy trabajando.</p>
             </div>
         </div>
     </section>
 
-    <!-- 🎯 INTERESTS SECTION -->
-    <section class="interests">
-        <div class="interests-container">
+    <section class="section interests">
+        <div class="container">
             <h2>Mis intereses</h2>
             <div class="interests-grid">
-                <div class="interest-card">
-                    <div class="interest-icon">🎮</div>
-                    <h3>Videojuegos</h3>
-                </div>
-                <div class="interest-card">
-                    <div class="interest-icon">📺</div>
-                    <h3>Anime</h3>
-                </div>
-                <div class="interest-card">
-                    <div class="interest-icon">💻</div>
-                    <h3>Tecnología</h3>
-                </div>
-                <div class="interest-card">
-                    <div class="interest-icon">🎨</div>
-                    <h3>Creatividad</h3>
-                </div>
-                <div class="interest-card">
-                    <div class="interest-icon">🎬</div>
-                    <h3>Crear Contenido</h3>
-                </div>
-                <div class="interest-card">
-                    <div class="interest-icon">📚</div>
-                    <h3>Aprender</h3>
-                </div>
+                <div class="interest-card"><div class="interest-icon">🎮</div><h3>Videojuegos</h3></div>
+                <div class="interest-card"><div class="interest-icon">📺</div><h3>Anime</h3></div>
+                <div class="interest-card"><div class="interest-icon">💻</div><h3>Tecnología</h3></div>
+                <div class="interest-card"><div class="interest-icon">🎨</div><h3>Creatividad</h3></div>
+                <div class="interest-card"><div class="interest-icon">🎬</div><h3>Contenido</h3></div>
+                <div class="interest-card"><div class="interest-icon">📚</div><h3>Aprendizaje</h3></div>
             </div>
         </div>
     </section>
 
-    <!-- 🔗 LINKS SECTION -->
-    <section class="links">
-        <h2>Conecta conmigo</h2>
-        <p>Descubre más sobre mí en mis redes sociales y proyectos</p>
-        <div class="links-buttons">
-            <a href="redes-sociales.html" class="btn btn-primary">Redes Sociales</a>
-            <a href="animes.html" class="btn btn-secondary">Mi Top Animes</a>
+    <section class="section links">
+        <div class="container">
+            <h2>Conecta conmigo</h2>
+            <p>Descubre más sobre mí en mis redes sociales y en mis páginas favoritas.</p>
+            <div class="links-buttons">
+                <a href="redes-sociales.html" class="btn btn-primary">Redes Sociales</a>
+                <a href="animes.html" class="btn btn-secondary">Mi Top Animes</a>
+            </div>
         </div>
     </section>
 
-    <!-- 📱 FOOTER -->
     <footer class="footer">
-        <p>© 2024 Huijie Lin. Todos los derechos reservados.</p>
+        <p>© 2026 Huijie Lin. Todos los derechos reservados.</p>
     </footer>
-
 </body>
 </html>
